@@ -2,7 +2,10 @@ package Fullstack.encargo_2.Model;
 
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
+import lombok.Data;
+
 import lombok.NoArgsConstructor;
+
 
 
 
@@ -10,6 +13,7 @@ import lombok.NoArgsConstructor;
 @Table(name = "curso_catalogo")
 @AllArgsConstructor
 @NoArgsConstructor
+@Data
 
 public class CursoCatalogoModel {
     @Id
