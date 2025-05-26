@@ -38,4 +38,12 @@ public class CursoCatalogoModel {
     @Column(nullable = false)
     private Integer cuposDisponible;
     
+
+    public void setCuposDisponible(Integer cuposDisponible) {
+    if (cuposDisponible == null || cuposDisponible <= 0) {
+        throw new IllegalArgumentException("Los cupos disponibles no pueden ser 0 o negativos.");
+    }
+    this.cuposDisponible = cuposDisponible;
+}
+
 }
