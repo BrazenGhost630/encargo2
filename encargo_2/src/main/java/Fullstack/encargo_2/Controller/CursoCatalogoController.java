@@ -64,6 +64,8 @@ public class CursoCatalogoController {
             cc.setCategoria(cursoCatalogoModel.getCategoria());
             cc.setDuracionHoras(cursoCatalogoModel.getDuracionHoras());
             cc.setActivo(cursoCatalogoModel.getActivo());
+            cc.setCuposDisponible(cc.getCuposDisponible());
+            cc.setCoste(cc.getCoste());
 
             catalogoServices.save(cc);
 

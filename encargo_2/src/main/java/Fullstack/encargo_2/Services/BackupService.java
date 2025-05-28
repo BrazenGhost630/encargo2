@@ -7,7 +7,7 @@ import org.springframework.stereotype.Service;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 
-import Fullstack.encargo_2.RespaldoDatos;
+import Fullstack.encargo_2.Model.RespaldoDatos;
 import Fullstack.encargo_2.Model.BackupModel;
 import Fullstack.encargo_2.Model.CursoCatalogoModel;
 import Fullstack.encargo_2.Model.Usuario;
@@ -21,7 +21,7 @@ public class BackupService {
     private final BackupRepository backupRepository;
     private final CursoCatalogoRepository cursoCatalogoRepository;
     private final UsuarioRepository usuarioRepository;
-    private final ObjectMapper objectMapper; // Para convertir a JSON
+    private final ObjectMapper objectMapper; 
 
 
     public BackupService(BackupRepository backupRepository, CursoCatalogoRepository cursoCatalogoRepository,
@@ -42,7 +42,7 @@ public class BackupService {
             List<CursoCatalogoModel> cursos = cursoCatalogoRepository.findAll();
             List<Usuario> usuarios = usuarioRepository.findAll();
 
-            // Convertir datos a formato JSON
+            
             String datosRespaldo = objectMapper.writeValueAsString(
                 new RespaldoDatos(cursos, usuarios)
             );
@@ -55,6 +55,10 @@ public class BackupService {
         } catch (Exception e) {
             throw new RuntimeException("Error al generar el respaldo", e);
         }
+
+    }
+    public void delete(Long id){
+        backupRepository.deleteById(id);
     }
 
 }

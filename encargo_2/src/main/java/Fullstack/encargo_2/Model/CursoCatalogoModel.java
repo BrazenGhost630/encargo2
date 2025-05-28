@@ -37,6 +37,8 @@ public class CursoCatalogoModel {
 
     @Column(nullable = false)
     private Integer cuposDisponible;
+    @Column(nullable = false)
+    private Integer coste;
     
 
     public void setCuposDisponible(Integer cuposDisponible) {

@@ -13,7 +13,7 @@ import Fullstack.encargo_2.Services.UsuarioService;
 import java.util.List;
 
 @RestController
-@RequestMapping("/api/v1/Usuarios")
+@RequestMapping("/api/v1/usuarios")
 
 
 public class UsuarioController {
@@ -56,6 +56,7 @@ public class UsuarioController {
             pac.setApellido(usuario.getApellido());
             pac.setRol(usuario.getRol());
             pac.setCorreo(usuario.getCorreo());
+            pac.setContrasena(usuario.getContrasena());
 
             usuarioService.save(pac);
             return ResponseEntity.ok(usuario);
@@ -71,6 +72,17 @@ public class UsuarioController {
             return ResponseEntity.noContent().build();
         } catch (Exception e) {
             return ResponseEntity.notFound().build();
+        }
+
+    }
+
+    @PostMapping("/login")
+    public ResponseEntity<String> login(@RequestBody Usuario usuario) {
+        boolean login = usuarioService.iniciarSesion(usuario.getNombre(), usuario.getContrasena());
+        if (login) {
+            return ResponseEntity.ok("Inicio de sesión exitoso");
+        } else {
+            return ResponseEntity.status(HttpStatus.UNAUTHORIZED).body("Credenciales incorrectas");
         }
 
     }
