@@ -1,4 +1,4 @@
-
+INSERT INTO usuarios (Id, run, nombre, apellido, rol, correo, contraseña) VALUES (1, '12.345.678-9', 'Laura', 'Gómez', 'Administrador', 'laura.gomez@email.com', 'pass1234'), (2, '23.456.789-0', 'Carlos', 'Pérez', 'Usuario', 'carlos.perez@email.com', 'qwerty5678'), (3, '34.567.890-1', 'María', 'López', 'Moderador', 'maria.lopez@email.com', 'abcdefgh'), (4, '45.678.901-2', 'Juan', 'Martínez', 'Usuario', 'juan.martinez@email.com', '1234abcd'), (5, '56.789.012-3', 'Sofía', 'Ramírez', 'Administrador', 'sofia.ramirez@email.com', 'password!');
 
 INSERT INTO `curso_catalogo` (`activo`, `duracion_horas`, `descripcion`, `categoria`, `nombre`,`cupos_Disponible`, `coste`) VALUES
 (b'0', 40, 'Juegos AAA', 'Juegos', 'Juegos A gran escala',20,20000),
